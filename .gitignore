@@ -1,0 +1,11 @@
+dataset/
+test-data/
+__pycache__/
+static/uploads/
+*.pyc
+*.pkl
+*.log
+*.h5
+*.keras
+*.jpeg
+*.png

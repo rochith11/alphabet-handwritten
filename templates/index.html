@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alphabet Recognition</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #0f172a, #1e293b);
+        color: white;
+      }
+
+      .container {
+        width: 420px;
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 24px;
+        padding: 40px;
+        text-align: center;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      }
+
+      h1 {
+        font-size: 32px;
+        margin-bottom: 15px;
+        font-weight: 700;
+      }
+
+      p {
+        color: #cbd5e1;
+        margin-bottom: 30px;
+        line-height: 1.5;
+      }
+
+      .upload-box {
+        border: 2px dashed rgba(255, 255, 255, 0.2);
+        border-radius: 16px;
+        padding: 30px;
+        margin-bottom: 25px;
+        transition: 0.3s;
+      }
+
+      .upload-box:hover {
+        border-color: #38bdf8;
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      input[type="file"] {
+        color: white;
+        width: 100%;
+      }
+
+      input[type="file"]::file-selector-button {
+        background: #38bdf8;
+        border: none;
+        padding: 10px 16px;
+        border-radius: 10px;
+        color: white;
+        cursor: pointer;
+        margin-right: 12px;
+        transition: 0.3s;
+        font-weight: 600;
+      }
+
+      input[type="file"]::file-selector-button:hover {
+        background: #0ea5e9;
+      }
+
+      button {
+        width: 100%;
+        padding: 14px;
+        border: none;
+        border-radius: 14px;
+        background: #38bdf8;
+        color: white;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      button:hover {
+        background: #0ea5e9;
+        transform: translateY(-2px);
+      }
+
+      .footer {
+        margin-top: 25px;
+        font-size: 13px;
+        color: #94a3b8;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Alphabet Recognition</h1>
+
+      <p>
+        Upload a handwritten English alphabet image and let the CNN model
+        recognize it instantly.
+      </p>
+
+      <form action="/predict" method="POST" enctype="multipart/form-data">
+        <div class="upload-box">
+          <input type="file" name="file" accept=".jpg,.jpeg,.png" required />
+        </div>
+
+        <button type="submit">Predict Character</button>
+      </form>
+
+      <div class="footer">CNN-Based Handwritten Alphabet Recognition</div>
+    </div>
+  </body>
+</html>

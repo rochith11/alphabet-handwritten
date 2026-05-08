@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prediction Result</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #0f172a, #1e293b);
+        color: white;
+        padding: 30px;
+      }
+
+      .container {
+        width: 420px;
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 24px;
+        padding: 40px;
+        text-align: center;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      }
+
+      h1 {
+        margin-bottom: 30px;
+        font-size: 32px;
+      }
+
+      .result-letter {
+        font-size: 90px;
+        font-weight: 700;
+        color: #38bdf8;
+        margin-bottom: 10px;
+      }
+
+      .confidence {
+        font-size: 18px;
+        color: #cbd5e1;
+        margin-bottom: 30px;
+      }
+
+      .image-box {
+        margin-top: 20px;
+        padding: 20px;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      .image-box img {
+        width: 180px;
+        border-radius: 14px;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .btn {
+        display: inline-block;
+        margin-top: 30px;
+        text-decoration: none;
+        background: #38bdf8;
+        color: white;
+        padding: 14px 24px;
+        border-radius: 14px;
+        transition: 0.3s;
+        font-weight: 600;
+      }
+
+      .btn:hover {
+        background: #0ea5e9;
+        transform: translateY(-2px);
+      }
+
+      .label {
+        color: #94a3b8;
+        margin-bottom: 8px;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Prediction Result</h1>
+
+      <div class="label">Predicted Character</div>
+
+      <div class="result-letter">{{ character }}</div>
+
+      <div class="confidence">Confidence: {{ confidence }}%</div>
+
+      <div class="image-box">
+        <div class="label">Uploaded Image</div>
+
+        <img src="/{{ image_path }}" alt="Uploaded Image" />
+      </div>
+
+      <a href="/" class="btn"> Try Another Image </a>
+    </div>
+  </body>
+</html>
